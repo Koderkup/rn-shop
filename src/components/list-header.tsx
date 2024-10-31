@@ -13,6 +13,7 @@ import { FontAwesome } from "@expo/vector-icons";
 // import { useCartStore } from "../store/cart-store";
 // import { supabase } from "../lib/supabase";
 import { Tables } from "../types/database.types";
+import { CATEGORIES } from "../../assets/categories";
 
 export const ListHeader = ({
   categories,
@@ -31,10 +32,12 @@ export const ListHeader = ({
         <View style={styles.headerLeft}>
           <View style={styles.avatarContainer}>
             <Image
-              source={{ uri: "https://via.placeholder.com/40" }}
+              source={{
+                uri: "https://ui-avatars.com/api/?name=Kuzin+Peter&size=40",
+              }}
               style={styles.avatarImage}
             />
-            <Text style={styles.avatarText}>Hello codewithlari</Text>
+            <Text style={styles.avatarText}>Hello Kupet</Text>
           </View>
         </View>
         <View style={styles.headerRight}>
@@ -51,6 +54,7 @@ export const ListHeader = ({
 
                   <View style={styles.badgeContainer}>
                     {/* <Text style={styles.badgeText}>{getItemCount()}</Text> */}
+                    <Text style={styles.badgeText}>1</Text>
                   </View>
                 </View>
               )}
@@ -73,7 +77,7 @@ export const ListHeader = ({
       <View style={styles.categoriesContainer}>
         <Text style={styles.sectionTitle}>Categories</Text>
         <FlatList
-          data={categories}
+          data={CATEGORIES}
           renderItem={({ item }) => (
             <Link asChild href={`/categories/${item.slug}`}>
               <Pressable style={styles.category}>

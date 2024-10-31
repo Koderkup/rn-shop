@@ -16,9 +16,6 @@ product: Product
           <Image
             source={product.heroImage}
             style={styles.itemImage}
-            onError={(e) =>
-              console.error("Image loading error:", e.nativeEvent.error)
-            }
           />
         </View>
         <View style={styles.itemTextContainer}>
@@ -32,15 +29,16 @@ product: Product
 
 const styles = StyleSheet.create({
   item: {
-    width: "48%",
+    width: 190,
     backgroundColor: "white",
     marginVertical: 8,
+    marginHorizontal: 4,
     borderRadius: 10,
     overflow: "hidden",
   },
   itemImageContainer: {
     borderRadius: 10,
-    width: "100%",
+    width: '100%',
     height: 150,
   },
   itemImage: {
